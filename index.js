@@ -1,7 +1,10 @@
-var inquirer = require('inquirer');
-var fs = require('fs');
+const inquirer = require('inquirer');
+const fs = require('fs');
 
-inquirer
+
+
+  function starter() {
+    inquirer
   .prompt([
     {
         type: "input",
@@ -33,15 +36,7 @@ inquirer
   ])
   .then((answers) => {
       console.log(answers);
-      fs.writeFile("userInfo.json" , JSON.stringify(answers,null,'\t') , err => err ? console.log(err) : console.log("Success"));
-      // const username = answers
-    // Use user feedback for... whatever!!
-  })
-  // .catch((error) => {
-  //   if (error.isTtyError) {
-  //     // Prompt couldn't be rendered in the current environment
-  //   } else {
-  //     // Something else went wrong
-  //   }
-  // }
-  ;
+      fs.writeFile("${answer.name}.html" , err => err ? console.log(err) : console.log("Success"));
+  }
+)}
+   
